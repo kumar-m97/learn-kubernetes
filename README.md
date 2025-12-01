@@ -64,13 +64,13 @@ A Kubernetes Deployment is a higher-level abstraction that manages a set of iden
 
 Check deployment.yml FYR
 
-***Service***
+***Service:***
 Service is another Kubernetes object to access a deployment. It allows us to expose our application to other pods within the cluster or to external clients.Services provide load balancing and automatic scaling for the pods behind them.
 
 check service.yml FYR
 
 
-***Ingress***
+***Ingress:***
 Ingress provides a way to expose your services to external clients outside the cluster. It acts as an external entry point to your applications and enables you to configure routing rules and load balancing for incoming traffic. For the Ingress resource to work, you need an Ingress controller deployed in your Kubernetes cluster. 
 
 Check ingress.yml FYR
