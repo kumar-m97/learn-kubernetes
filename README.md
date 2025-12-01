@@ -1,0 +1,24 @@
+# All about Kuberntes! 
+
+Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
+
+<img width="1100" height="535" alt="image" src="https://github.com/user-attachments/assets/091022a0-720a-4349-9883-ddf91d26be76" />
+
+**Master Node:** 
+The Master Node is responsible for making global decisions about the cluster, such as scheduling new pods, 
+monitoring the health of nodes and pods, and scaling applications based on demand.
+
+
+The Master Node consists of several key components:
+**API Server:** This is the central management point of the cluster. It exposes the Kubernetes API, which allows users and other components to interact with the cluster.
+**etcd:** It is a distributed key-value store that stores the configuration data of the cluster. All information about the cluster’s state is stored here.
+**Controller Manager: **The Controller Manager includes several controllers that watch the cluster state through the API Server and take corrective actions to ensure the desired state is maintained. For example, the ReplicaSet controller ensures the specified number of pod replicas are running.
+**Scheduler:** The Scheduler is responsible for assigning new pods to nodes based on resource requirements and availability. It helps distribute the workload evenly across the worker nodes.
+
+**Worker Nodes:**
+The Worker Nodes are the machines where containers (pods) are scheduled and run. They form the data plane of the cluster, executing the actual workloads. 
+Each Worker Node runs several key components:
+
+**Kubelet:** The Kubelet is the agent that runs on each Worker Node and communicates with the Master Node. It ensures that the containers described in the pod specifications are running and healthy.
+**Container Runtime:** Kubernetes supports multiple container runtimes, such as Docker or containerd. The Container Runtime is responsible for pulling container images and running containers on the Worker Nodes.
+**Kube Proxy:** Kube Proxy is responsible for network communication within the cluster. It manages the network routing for services and performs load balancing.
