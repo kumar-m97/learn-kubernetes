@@ -20,3 +20,19 @@ spec:
         image:
         port:
         - containerPort:
+        envFrom:
+        - configMapRef:
+            name: myapp-config
+        env:
+         - name: DB_USERNAME
+           valueFrom:
+             secretKeyRef:
+               name: myapp-secret
+               key: DB_USERNAME
+        volumeMounts:
+        - name: myapp-storage
+          mountPath: /data
+    volumes:
+      - name: myapp-storage
+        persistentVolumeClaim:
+          claimName: myapp-pvc

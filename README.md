@@ -95,4 +95,9 @@ Check secrets.yml FYR
 It provides persistent storage to the containers to store related data in it ensuring the data persists even if a container is restarted or rescheduled.
 <img width="1034" height="543" alt="image" src="https://github.com/user-attachments/assets/07a248a0-7057-4d85-bd26-d5fb1cebadb2" />
 
+Check pvc.yml FYR
+
+
+***StatefulSet:***
+Kubernetes StatefulSet is used for stateful applications where each pod has a unique identity and persistent storage. StatefulSets provide stable network identities and are suitable for databases, key-value stores, and other applications that require unique persistent storage and ordered scaling.
 
