@@ -50,19 +50,8 @@ Step 4: Pod status updated and monitored
 In Kubernetes, a Node is a worker machine where containers are deployed and run. Each node represents an individual machine within the cluster, and it could be a physical or virtual machine. Nodes are responsible for running the actual workloads and providing the necessary resources to run containers.
 
 **🗂 Basic File Structure of Any Kubernetes Manifest**
-apiVersion:    # Version of Kubernetes API being used (group/version)
-kind:          # What object you want to create (Pod, Deployment, Service, etc.)
-metadata:      # Basic information, metadata of the object (name, labels, namespace)
-  name:        # Name of the object
-  labels:      # Optional: key-value pairs for identification
-spec:          # Blueprint/Configuration for the object
-  ...          # Object-specific details (replicas, ports, containers, data)
-  template:    # templete which the manifest is going to use.
-    metadata:  # metadata of the template
-      ...
-    spec:      # configuration of the conatiner
-      containers:
-        ...    # detailed configuration of each container
+<img width="852" height="392" alt="image" src="https://github.com/user-attachments/assets/41f94c24-6ceb-4d23-b52f-7cc34b0c9c62" />
+
 
 **Pods:**
 A Pod is the smallest deployable unit in Kubernetes and represents one or more tightly coupled containers. Containers within a pod share the same network namespace, enabling them to communicate with each other over localhost. A pod represents a single instance of a process in the cluster.
