@@ -4,7 +4,7 @@ Kubernetes is an open-source container orchestration platform that automates the
 
 <img width="1100" height="535" alt="image" src="https://github.com/user-attachments/assets/091022a0-720a-4349-9883-ddf91d26be76" />
 
-<h1>**Master Node:** </h1>
+<h2>Master Node:</h2>
 The Master Node is responsible for making global decisions about the cluster, such as scheduling new pods, 
 monitoring the health of nodes and pods, and scaling applications based on demand.
 
