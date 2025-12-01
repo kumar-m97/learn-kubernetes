@@ -75,3 +75,16 @@ Ingress provides a way to expose your services to external clients outside the c
 
 Check ingress.yml FYR
 
+***ConfigMap:***
+A Kubernetes ConfigMap is used to store configuration data that can be consumed by pods as environment variables or mounted as configuration files
+
+Check configmap.yml FYR
+
+***Secrets:***
+Kubernetes Secrets are used to store sensitive information, such as passwords, API keys, or TLS certificates. Secrets are base64-encoded by default and can be mounted as files or used as environment variables in pods.
+
+Check secrets.yml FYR
+
+***Volumes:***
+It provides persistent storage to the containers to store related data in it ensuring the data persists even if a container is restarted or rescheduled.
+

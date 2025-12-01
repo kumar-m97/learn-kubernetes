@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: myapp-config
+data:
+  APP_ENV: "production"
+  APP_DEBUG: "false"
+  DATABASE_HOST: "db.myapp.svc.cluster.local"
+  DATABASE_PORT: "5432"
