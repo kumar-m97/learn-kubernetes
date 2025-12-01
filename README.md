@@ -52,9 +52,26 @@ In Kubernetes, a Node is a worker machine where containers are deployed and run.
 **🗂 Basic File Structure of Any Kubernetes Manifest**
 <img width="852" height="392" alt="image" src="https://github.com/user-attachments/assets/41f94c24-6ceb-4d23-b52f-7cc34b0c9c62" />
 
+Note:
+Lables -- key-value pairs attached to Kubernetes objects like Pods, Deployments, Nodes, Services, etc. to label them with unique keywords
+Selectors -- used to find and match objects that have specific labels
 
-**Pods:**
+***Pods:***
 A Pod is the smallest deployable unit in Kubernetes and represents one or more tightly coupled containers. Containers within a pod share the same network namespace, enabling them to communicate with each other over localhost. A pod represents a single instance of a process in the cluster.
 
-**Deployment:**
+***Deployment:***
 A Kubernetes Deployment is a higher-level abstraction that manages a set of identical pods. Deployments provide features like rolling updates, rollback, and scaling, making them suitable for web servers, APIs, and microservices.
+
+Check deployment.yml FYR
+
+***Service***
+Service is another Kubernetes object to access a deployment. It allows us to expose our application to other pods within the cluster or to external clients.Services provide load balancing and automatic scaling for the pods behind them.
+
+check service.yml FYR
+
+
+***Ingress***
+Ingress provides a way to expose your services to external clients outside the cluster. It acts as an external entry point to your applications and enables you to configure routing rules and load balancing for incoming traffic. For the Ingress resource to work, you need an Ingress controller deployed in your Kubernetes cluster. 
+
+Check ingress.yml FYR
+

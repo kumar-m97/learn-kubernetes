@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-Service
+spec:
+  type: ClusterIP  #can be nodeport,loadbalancer as per the usecase
+  selector:
+    app: my-app
+  ports:
+  - port: #port which should be exposed 
+    taregtport: #target port where the to which the traffic should be forwarded
+    protocol: 
+  
