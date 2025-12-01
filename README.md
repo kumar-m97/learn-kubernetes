@@ -22,3 +22,50 @@ Each Worker Node runs several key components:
 **Kubelet:** The Kubelet is the agent that runs on each Worker Node and communicates with the Master Node. It ensures that the containers described in the pod specifications are running and healthy.
 **Container Runtime:** Kubernetes supports multiple container runtimes, such as Docker or containerd. The Container Runtime is responsible for pulling container images and running containers on the Worker Nodes.
 **Kube Proxy:** Kube Proxy is responsible for network communication within the cluster. It manages the network routing for services and performs load balancing.
+
+🚀 When a user deploys a new application in Kubernetes — What happens?
+Step 1: User submits Deployment YAML ---- kubectl apply -f deployment.yaml
+-> The kubectl CLI sends this request to the API Server (the control plane entry point).
+-> The API Server validates and stores the desired state in etcd.
+
+Step 2: Scheduler decides where to run Pods
+-> The Kubernetes Scheduler checks for pending Pods (not yet assigned to a node).
+-> It chooses the best worker node based on:
+CPU/RAM availability
+Node taints/labels
+Affinity rules
+-> The Scheduler assigns the Pod to the chosen node.
+
+Step 3: Kubelet on Worker Node creates Pod
+-> The Kubelet on that node reads the Pod spec from API Server.
+-> It asks the container runtime (Docker, containerd) to pull images and start the container.
+-> A Pod is now running on the node.
+
+Step 4: Pod status updated and monitored
+-> The Kubelet sends Pod updates (Running/Failed/CrashLoop) to the API Server.
+-> ReplicaSet/Deployment Controller ensures the desired number of Pods are always running
+
+**Main K8s Components & Objects**
+**Nodes:**
+In Kubernetes, a Node is a worker machine where containers are deployed and run. Each node represents an individual machine within the cluster, and it could be a physical or virtual machine. Nodes are responsible for running the actual workloads and providing the necessary resources to run containers.
+
+**🗂 Basic File Structure of Any Kubernetes Manifest**
+apiVersion:    # Version of Kubernetes API being used (group/version)
+kind:          # What object you want to create (Pod, Deployment, Service, etc.)
+metadata:      # Basic information, metadata of the object (name, labels, namespace)
+  name:        # Name of the object
+  labels:      # Optional: key-value pairs for identification
+spec:          # Blueprint/Configuration for the object
+  ...          # Object-specific details (replicas, ports, containers, data)
+  template:    # templete which the manifest is going to use.
+    metadata:  # metadata of the template
+      ...
+    spec:      # configuration of the conatiner
+      containers:
+        ...    # detailed configuration of each container
+
+**Pods:**
+A Pod is the smallest deployable unit in Kubernetes and represents one or more tightly coupled containers. Containers within a pod share the same network namespace, enabling them to communicate with each other over localhost. A pod represents a single instance of a process in the cluster.
+
+**Deployment:**
+A Kubernetes Deployment is a higher-level abstraction that manages a set of identical pods. Deployments provide features like rolling updates, rollback, and scaling, making them suitable for web servers, APIs, and microservices.
