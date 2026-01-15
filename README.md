@@ -1,16 +1,16 @@
-# All about Kuberntes! (H1)
+#All about Kuberntes! (H1)
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
 
 <img width="1100" height="535" alt="image" src="https://github.com/user-attachments/assets/091022a0-720a-4349-9883-ddf91d26be76" />
 
-Master Node (H2)
+##Master Node (H2)
 The Master Node is responsible for making global decisions about the cluster, such as scheduling new pods, 
 monitoring the health of nodes and pods, and scaling applications based on demand.
 
 
 The Master Node consists of several key components:
-API Server(H3): This is the central management point of the cluster. It exposes the Kubernetes API, which allows users and other components to interact with the cluster.
+###API Server(H3): This is the central management point of the cluster. It exposes the Kubernetes API, which allows users and other components to interact with the cluster.
 
 etcd (H3): It is a distributed key-value store that stores the configuration data of the cluster. All information about the cluster’s state is stored here.
 
