@@ -45,6 +45,36 @@ Now create a new Canary Ingress with annotations having the canary weight to sen
 
 Increase the traffic gradually and test accordingly and once 100% traffic is comming from new Canary deployment, the new version deployment is being served fully.
 
+### Key Config for Zero Downtime  
+Configure readiness probe in the deployment. By doing this traffic is sent to only healthy pods.  
+<img width="372" height="190" alt="image" src="https://github.com/user-attachments/assets/e8f3e89b-0ed6-4ff1-bc38-872166ad5652" />  
+
+## Rollback strategies in Kubernetes  
+
+### Using Deployment  
+In real Kubernetes clusters, rollback is mainly handled by Deployments. Kubernetes keeps old versions (ReplicaSets) so you can go back if a rollout fails.
+**Every time you update a Deployment:**  
+Kubernetes creates a new ReplicaSet  
+Old ReplicaSets are kept (by default last 10)  
+Each ReplicaSet = one version of your app 
+
+<img width="1045" height="790" alt="image" src="https://github.com/user-attachments/assets/257586de-5b2d-4b74-a031-6feee5f399d9" />  
+<img width="1031" height="425" alt="image" src="https://github.com/user-attachments/assets/1b07ced1-3f6e-4cfa-ae89-009ae5850668" />
+
+### Using Helm  
+When you deploy using Helm, rollback is handled at the Helm release level.
+Helm tracks every install/upgrade as a release revision and lets you go back to any previous revision.  
+
+We can check the history via  
+helm history myapp  
+
+<img width="1025" height="461" alt="image" src="https://github.com/user-attachments/assets/aab8f0ab-8574-45cc-9433-e3e1c8ae746d" />  
+
+<img width="1044" height="493" alt="image" src="https://github.com/user-attachments/assets/f2661a46-d440-4e0c-83ca-c8180801801e" />
+
+
+
+
 
 
 
