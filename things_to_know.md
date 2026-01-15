@@ -14,6 +14,38 @@ Configure it in the Ingress.yml file as below:
 ## Deployment Strategies in K8S  
 
 ### Rolling Update  
-
---> Apply in the deployment.yml file under strategy.  
+--> Apply in the deployment.yml file under strategy. Create new pods with updated code, wait till its ready and then remove the old pod. makes sure at least N pods are always running.   
 ![alt text](image.png)
+
+### Blue Green Deployment  
+--> Create two deployment.yml files.  
+1. app-blue  (current deployment)
+2. app-green (new deployment)
+
+Point the service to new deployment app-green using selector. Test it correctly and if something goes wrong, change the service pointing back to app-blue.  
+
+### Canary Deployment  
+--> The traffic is moved to the new updated deployment gradually, not all at once.  
+Assuming the stable version is deployed and running.  
+<img width="697" height="679" alt="image" src="https://github.com/user-attachments/assets/1d1e836b-6e45-4e96-8bec-31522c80cffc" />  
+
+Service of this version is below  
+<img width="505" height="371" alt="image" src="https://github.com/user-attachments/assets/011bf45e-a5e2-444b-a38c-bbde30173974" />  
+
+Now to deploy new version via canary deployment, we define a new deployment.yml file with version as v2 and new service as well pointing to the new v2 version deployment.  
+<img width="705" height="806" alt="image" src="https://github.com/user-attachments/assets/04062124-1796-4c7f-9013-763c88ac02c9" />  
+
+<img width="567" height="491" alt="image" src="https://github.com/user-attachments/assets/935a715d-26a0-4a39-b7d4-fd6d5f771cb2" />  
+
+Now the main ingress should look like the below which is pointing to stable version as of now and sends 100 % traffic
+<img width="644" height="602" alt="image" src="https://github.com/user-attachments/assets/a274e2e3-0fe3-490b-8881-1b4e10f08715" />  
+
+Now create a new Canary Ingress with annotations having the canary weight to send 10 % of traffic to the new update version v2 deployment.  
+<img width="741" height="693" alt="image" src="https://github.com/user-attachments/assets/4b5583f6-033a-4237-ba5d-032f1160bf79" />
+
+Increase the traffic gradually and test accordingly and once 100% traffic is comming from new Canary deployment, the new version deployment is being served fully.
+
+
+
+
+
