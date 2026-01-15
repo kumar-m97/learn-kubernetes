@@ -13,13 +13,13 @@ The Master Node consists of several key components:
 ### API Server: 
 This is the central management point of the cluster. It exposes the Kubernetes API, which allows users and other components to interact with the cluster.
 
-### etcd (H3): 
+### etcd: 
 It is a distributed key-value store that stores the configuration data of the cluster. All information about the cluster’s state is stored here.
 
 ### Controller Manager: 
 The Controller Manager includes several controllers that watch the cluster state through the API Server and take corrective actions to ensure the desired state is maintained. For example, the ReplicaSet controller ensures the specified number of pod replicas are running.
 
-### Scheduler(H3)
+### Scheduler:
 The Scheduler is responsible for assigning new pods to nodes based on resource requirements and availability. It helps distribute the workload evenly across the worker nodes.
 
 
