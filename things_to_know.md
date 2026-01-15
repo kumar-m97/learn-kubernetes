@@ -95,6 +95,63 @@ Post this, we can create a Role with required access and bind it with the servic
 <img width="773" height="209" alt="image" src="https://github.com/user-attachments/assets/d714e344-e32c-4c09-85d1-47cb6f7c192c" />  
 
 
+## kubectl commands 
+![alt text](image-1.png)  
+
+![alt text](image-2.png)  
+
+The above describe command shows  
+--Events  
+--Scheduling issues  
+--Image errors  
+--Probe failures  
+
+![alt text](image-3.png)  
+
+![alt text](image-4.png)  
+
+![alt text](image-5.png) 
+
+![alt text](image-6.png)  
+
+![alt text](image-7.png)
+
+
+## Common K8S Errors  
+![alt text](image-8.png)  
+
+![alt text](image-9.png)  
+
+![alt text](image-10.png)  
+
+![alt text](image-11.png)  
+
+![alt text](image-12.png)  
+
+![alt text](image-13.png)  
+
+![alt text](image-14.png)  
+
+**--> Quick Debug Flow**  
+![alt text](image-15.png)  
+
+
+## Taints and Tolerations  
+![alt text](image-16.png)  
+
+
+## Node Affenity  
+Using Node affenity, we can tell k8s to place a pod on a specific node if it matched a perticular lable or a pattern  
+![alt text](image-17.png)  
+
+## Readiness and Liveness Probe  
+### Rediness
+It allows to let k8s now if a pod is allowed and ready to handle traffic or not.  
+![alt text](image-18.png)  
+
+### Liveness  
+![alt text](image-19.png)  
+
 
 
 
