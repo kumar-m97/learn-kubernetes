@@ -102,21 +102,21 @@ port
 
 Everything advanced (SSL redirect, rewrites, auth, rate-limit, headers, timeouts, etc.) is done using annotations, and each Ingress controller (NGINX, ALB, Traefik, HAProxy) supports its own set.
 
-##### Example:
-annotations:
-  nginx.ingress.kubernetes.io/rewrite-target: /
-  nginx.ingress.kubernetes.io/ssl-redirect: "true"
+##### Example:  
+annotations:  
+  nginx.ingress.kubernetes.io/rewrite-target: /  
+  nginx.ingress.kubernetes.io/ssl-redirect: "true"  
 
 Here, rewrite-target does the rerouting of different endpoints. if we have defined path: /api and someone calls /api/users, the ingress will route it to /users.
 
 **Common Annotations:**
-nginx.ingress.kubernetes.io/rewrite-target	      Rewrite request path
-nginx.ingress.kubernetes.io/ssl-redirect	        Force HTTPS
-nginx.ingress.kubernetes.io/proxy-body-size	      Max upload size
-nginx.ingress.kubernetes.io/auth-type	            Enable basic auth
-nginx.ingress.kubernetes.io/limit-rps	            Rate limiting
-nginx.ingress.kubernetes.io/proxy-read-timeout	  Backend timeout
-nginx.ingress.kubernetes.io/enable-cors	          Enable CORS
+nginx.ingress.kubernetes.io/rewrite-target	      Rewrite request path  
+nginx.ingress.kubernetes.io/ssl-redirect	        Force HTTPS  
+nginx.ingress.kubernetes.io/proxy-body-size	      Max upload size  
+nginx.ingress.kubernetes.io/auth-type	            Enable basic auth  
+nginx.ingress.kubernetes.io/limit-rps	            Rate limiting  
+nginx.ingress.kubernetes.io/proxy-read-timeout	  Backend timeout  
+nginx.ingress.kubernetes.io/enable-cors	          Enable CORS  
 
 
 Check ingress.yml FYR
