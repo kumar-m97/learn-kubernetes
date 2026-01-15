@@ -129,6 +129,27 @@ Check configmap.yml FYR
 ### Secrets:
 Kubernetes Secrets are used to store sensitive information, such as passwords, API keys, or TLS certificates. Secrets are base64-encoded by default and can be mounted as files or used as environment variables in pods.
 
+### Different types of Secrets:  
+**Opeque**  
+<img width="402" height="262" alt="image" src="https://github.com/user-attachments/assets/a10eea09-b286-4d9c-b70f-d51658c0720d" />  
+
+**kubernetes.io/tls**  
+<img width="341" height="191" alt="image" src="https://github.com/user-attachments/assets/022f3d43-6c3c-4843-8f43-cb87ce1c4937" />  
+
+**kubernetes.io/basic-auth**  
+username:
+password:
+
+**kubernetes.io/ssh-auth**  
+ssh-privatekey: 
+
+**kubernetes.io/service-account-token**  
+Auto-created for service accounts.  
+
+**kubernetes.io/token**  
+Used during cluster bootstrap (kubeadm).
+
+
 Check secrets.yml FYR
 
 ### Volumes:
