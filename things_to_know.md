@@ -70,7 +70,35 @@ helm history myapp
 
 <img width="1025" height="461" alt="image" src="https://github.com/user-attachments/assets/aab8f0ab-8574-45cc-9433-e3e1c8ae746d" />  
 
-<img width="1044" height="493" alt="image" src="https://github.com/user-attachments/assets/f2661a46-d440-4e0c-83ca-c8180801801e" />
+<img width="1044" height="493" alt="image" src="https://github.com/user-attachments/assets/f2661a46-d440-4e0c-83ca-c8180801801e" />  
+
+
+## Network Security and access control  
+--> We can configure RBAC  
+<img width="1037" height="657" alt="image" src="https://github.com/user-attachments/assets/e1672eaa-a0f3-4a3f-85a3-819600bfad20" />  
+
+--> We can use serviceaccount  
+<img width="1043" height="363" alt="image" src="https://github.com/user-attachments/assets/ddaa5f5c-a119-49a9-971e-5c27073add37" />  
+<img width="1042" height="453" alt="image" src="https://github.com/user-attachments/assets/3d6fe179-d18e-4da6-a1ae-44aca9a0f803" />  
+
+Now all pods in this Deployment use identity = app-sa.  
+Post this, we can create a Role with required access and bind it with the serviceaccount.  
+<img width="1081" height="874" alt="image" src="https://github.com/user-attachments/assets/05d33c17-9ec2-4bcc-8b4e-1421a83995dc" />  
+<img width="1043" height="245" alt="image" src="https://github.com/user-attachments/assets/518c6598-833d-4230-8682-c5bec6095f7a" />  
+<img width="622" height="508" alt="image" src="https://github.com/user-attachments/assets/a8fda223-693e-470b-9c17-386fe47f8018" />
+
+
+--> We can define Network Policies  
+<img width="1082" height="727" alt="image" src="https://github.com/user-attachments/assets/0557287d-cfa8-4652-b95d-89b94c612178" />  
+
+--> We can enable security at Ingress level  
+<img width="773" height="209" alt="image" src="https://github.com/user-attachments/assets/d714e344-e32c-4c09-85d1-47cb6f7c192c" />  
+
+
+
+
+
+
 
 
 
