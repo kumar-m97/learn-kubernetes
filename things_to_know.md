@@ -10,3 +10,10 @@ Configure it in the Ingress.yml file as below:
 **Flow of the HTTPS Request**  
 <img width="607" height="343" alt="image" src="https://github.com/user-attachments/assets/5f8d04d5-21f3-4269-bcb0-f47c95c6520c" />
 
+
+## Deployment Strategies in K8S  
+
+### Rolling Update  
+
+--> Apply in the deployment.yml file under strategy.  
+![alt text](image.png)

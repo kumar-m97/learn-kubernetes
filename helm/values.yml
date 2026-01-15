@@ -1,0 +1,35 @@
+#replicaCount: 2
+#image:
+#  repository: my-app-image
+#  tag: latest
+#  pullPolicy: IfNotPresent
+#service:
+#  type: ClusterIP
+# port: 80
+
+##################################
+
+app:
+  name: my-app
+  env: stage
+
+replicaCount: 2
+
+image:
+  repository: my-app-image
+  tag: latest
+
+service:
+  port: 80
+
+configmap:
+  name: myapp-config
+
+secret:
+  name: myapp-secret
+  dbUsernameKey: DB_USERNAME
+
+volume:
+  name: myapp-storage
+  mountPath: /data
+  pvcName: myapp-pvc
