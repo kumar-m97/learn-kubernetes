@@ -91,7 +91,9 @@ Now all pods in this Deployment use identity = app-sa.
 Post this, we can create a Role with required access and bind it with the serviceaccount.  
 <img width="1081" height="874" alt="image" src="https://github.com/user-attachments/assets/05d33c17-9ec2-4bcc-8b4e-1421a83995dc" />  
 <img width="1043" height="245" alt="image" src="https://github.com/user-attachments/assets/518c6598-833d-4230-8682-c5bec6095f7a" />  
-<img width="622" height="508" alt="image" src="https://github.com/user-attachments/assets/a8fda223-693e-470b-9c17-386fe47f8018" />
+<img width="622" height="508" alt="image" src="https://github.com/user-attachments/assets/a8fda223-693e-470b-9c17-386fe47f8018" />  
+<img width="1062" height="801" alt="image" src="https://github.com/user-attachments/assets/6c5d3dee-0854-44ff-9f97-bd46259207c8" />
+
 
 
 --> We can define Network Policies  
@@ -157,6 +159,24 @@ It allows to let k8s now if a pod is allowed and ready to handle traffic or not.
 
 ### Liveness  
 ![alt text](image-19.png)  
+
+## How to give Jenkins permissions to manage a Kubernetes cluster  
+<img width="583" height="232" alt="image" src="https://github.com/user-attachments/assets/639b5980-bcd8-4282-9637-d37f9d05d178" />  
+<img width="1031" height="388" alt="image" src="https://github.com/user-attachments/assets/a601bc22-3cfb-414b-98e2-b063d5fce3f7" />  
+<img width="1040" height="452" alt="image" src="https://github.com/user-attachments/assets/63546692-4192-4de1-bc31-045f1d715200" />  
+<img width="1037" height="583" alt="image" src="https://github.com/user-attachments/assets/5dc28ce3-452f-4bcd-915e-e6a12a094040" />  
+<img width="1041" height="477" alt="image" src="https://github.com/user-attachments/assets/fe709839-f6b0-463f-821f-d7b58afa8433" />  
+
+### How to scale existing node group in EKS  
+<img width="1036" height="291" alt="image" src="https://github.com/user-attachments/assets/d183c13b-8800-4569-9afc-031c5e4982bc" />  
+<img width="877" height="401" alt="image" src="https://github.com/user-attachments/assets/968c7ba4-32f1-4e13-8227-1fabefd4a58e" />
+
+
+
+
+
+
+
 
 
 
