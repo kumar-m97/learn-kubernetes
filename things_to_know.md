@@ -22,7 +22,13 @@ Configure it in the Ingress.yml file as below:
 1. app-blue  (current deployment)
 2. app-green (new deployment)
 
-Point the service to new deployment app-green using selector. Test it correctly and if something goes wrong, change the service pointing back to app-blue.  
+Initiall the service will be having app-blue under selector, so the traffic will be routed to the current live server. Meanwhile deploy the new deployment app-green and validate it internally (without sending the actual traffic)  
+<img width="1028" height="521" alt="image" src="https://github.com/user-attachments/assets/190c3e7b-6842-4507-b20b-6f27dc17bd3c" />  
+
+Point the service to new deployment app-green using selector. Test it correctly and if something goes wrong, change the service pointing back to app-blue. 
+<img width="1041" height="272" alt="image" src="https://github.com/user-attachments/assets/e869f402-67f8-4b4e-8fe2-68e85c1b0f4f" />  
+<img width="1038" height="448" alt="image" src="https://github.com/user-attachments/assets/7e300811-caf2-4a92-b16b-b4a639fbb982" />  
+
 
 ### Canary Deployment  
 --> The traffic is moved to the new updated deployment gradually, not all at once.  
