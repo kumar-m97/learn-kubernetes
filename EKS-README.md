@@ -35,7 +35,7 @@ _mapRoles: |
 EKS uses OIDC to map Kubernetes service account to IAM Roles.This is crucial for granting fine-grained permissions to pods (e.g., allowing a pod to access S3 or DynamoDB without exposing AWS keys). In simple words, if any service inside a K8S cluster wants to communicate with any AWS resource, it needs OIDC provider which connects the K8S service account to appropriate IAM roles or policies.  
 
 **Here’s the step-by-step process to configure IAM OIDC Provider in EKS**    
-1.Export Cluster Name and assign oidc_id  
+1. Export Cluster Name and assign oidc_id  
 _oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)_  
 
 2. Check if there is an IAM OIDC provider configured already  
@@ -43,6 +43,38 @@ _aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4_
 
 3. If not, run the below command.  
 _eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve_
+
+### Issues and challenges while creating EKS Cluster  
+After cluster creation, I was not able to connect to the cluster with kubectl command even after adding the IAM user in the access entry.  
+Found that the API endpoint access was set to Private. I changed it to Public and then it worked.If the EKS cluster was created with a Private cluster endpoint, The user should be able to interact with EKS cluster only from a Bastion host on the public subnet. SSH into the host in the Public subnet and from there with can set “aws configure” with the creds of appropriate IAM user along with update kube-config command to set the new context in the cluster.  
+
+### Frequently used eksctl and kubectl commands used while managing K8S cluster  
+**> create IAM role for Service Account**    
+_eksctl create iamserviceaccount \  
+	--name <service_account_name> \  
+	--namespace <namespace> \  
+	--cluster <cluster_name> \  
+	--attach-policy-arn arn:aws:iam::<account_id>:policy/<policy_name> \  
+	--approve \  
+	--role-name <iam_role_name>_  
+
+**> Create an eks cluster**  
+_eksctl create cluster \  
+  --name your-cluster-name \  
+  --region your-region \  
+  --nodegroup-name your-nodegroup-name \  
+  --node-type t3.small \  
+  --nodes 2 \  
+  --nodes-min 1 \  
+  --nodes-max 3_  
+
+**> Create IAM Policy**  
+_aws iam create-policy \  
+    --policy-name AWSLoadBalancerControllerIAMPolicy \  
+    --policy-document file://iam_policy.jso_  
+
+
+
 
 
 
